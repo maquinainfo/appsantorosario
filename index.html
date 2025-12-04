@@ -173,7 +173,7 @@
         <header id="main-header" class="shrink-0 pt-6 pb-4 px-6 text-center z-20 relative transition-all duration-300 bg-gradient-to-b from-black/80 to-transparent">
             <div class="text-[10px] tracking-[0.3em] text-[#C5A059] uppercase mb-1 drop-shadow-md font-bold">Pax Et Bonum</div>
             <h1 class="text-3xl font-bold text-[#f5e6c4] drop-shadow-lg font-cinzel tracking-wide">Santo Rosário</h1>
-            <p class="text-lg text-[#a89078] font-bold mt-1 drop-shadow-md font-cinzel tracking-wider">Batalha Espiritual</p>
+            <p class="text-2xl text-[#a89078] font-bold mt-0 drop-shadow-md font-cinzel tracking-wider">Batalha Espiritual</p>
         </header>
 
         <!-- CONTENT AREA -->
@@ -187,7 +187,7 @@
                             <i class="fa-solid fa-book-bible text-2xl text-[#C5A059] mb-2 drop-shadow-md group-hover:scale-110 transition-transform"></i>
                             <h3 class="text-xs font-bold text-[#e0d0c0] leading-tight font-cinzel uppercase tracking-wide">Sala de<br>Instrução</h3>
                         </div>
-                        <div class="menu-card h-32 flex flex-col items-center justify-center text-center p-3 group" style="background: rgba(20, 10, 10, 0.75); backdrop-filter: blur(8px); border: 1px solid rgba(197, 160, 89, 0.4); border-radius: 8px; cursor: pointer;">
+                        <div onclick="window.navigateTo('library-room')" class="menu-card h-32 flex flex-col items-center justify-center text-center p-3 group" style="background: rgba(20, 10, 10, 0.75); backdrop-filter: blur(8px); border: 1px solid rgba(197, 160, 89, 0.4); border-radius: 8px; cursor: pointer;">
                             <i class="fa-solid fa-church text-2xl text-[#C5A059] mb-2 drop-shadow-md group-hover:scale-110 transition-transform"></i>
                             <h3 class="text-xs font-bold text-[#e0d0c0] leading-tight font-cinzel uppercase tracking-wide">Biblioteca<br>Católica</h3>
                         </div>
@@ -209,7 +209,7 @@
                                  </svg>
                             </div>
                             <div class="w-2/3 text-left pl-4 border-l border-[#C5A059]/30">
-                                <h2 class="text-3xl text-[#fff] font-bold drop-shadow-lg cinzel-font leading-tight mb-1">Oração do<br>Rosário</h2>
+                                <h2 class="text-xl text-[#fff] font-bold drop-shadow-lg cinzel-font leading-tight mb-1">Oração do<br>Santo Rosário</h2>
                                 <p class="text-xs text-[#C5A059] uppercase tracking-widest mb-3">Campo de Batalha</p>
                                 <span class="text-xs bg-[#C5A059]/20 text-[#C5A059] px-3 py-1.5 rounded border border-[#C5A059]/40 font-bold">Entrar</span>
                             </div>
@@ -225,36 +225,59 @@
                             <p class="text-xs text-gray-400">Sagradas Escrituras</p>
                         </div>
                     </div>
-                    <div class="text-center mt-8 opacity-80 pb-10">
-                        <p class="text-xs text-[#C5A059] italic mb-1">"Quem reza se salva, quem não reza se condena."</p>
-                        <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">- Santo Afonso -</p>
+                    
+                    <!-- CARROUSEL PADRE PIO (ATUALIZADO) -->
+                    <div class="mt-8 pb-10 w-full max-w-md mx-auto text-center opacity-90">
+                        <div id="quote-container" class="transition-opacity duration-1000 ease-in-out h-28 flex flex-col justify-center items-center px-4">
+                            <p id="quote-text" class="text-sm text-[#C5A059] italic mb-2 leading-relaxed font-serif">"Amai a Nossa Senhora e rezem o terço, porque o seu terço é a arma contra todos os males do mundo de hoje."</p>
+                            <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">- São Padre Pio -</p>
+                        </div>
                     </div>
+
                 </div>
             </main>
 
-            <!-- VIEW: INSTRUCTION ROOM (Netflix Style) -->
-            <main id="view-instruction-room" class="hidden absolute inset-0 bg-[#141414] z-40 flex flex-col screen-transition scroll-container w-full">
-                <div class="absolute top-0 left-0 w-full p-4 z-20 flex justify-between items-center bg-gradient-to-b from-black/80 to-transparent">
+            <!-- VIEW: INSTRUCTION ROOM (ATUALIZADO) -->
+            <main id="view-instruction-room" class="hidden absolute inset-0 bg-[#1a0f0c] z-40 flex flex-col items-center justify-center text-center p-6 screen-transition w-full">
+                <div class="absolute top-0 left-0 w-full p-4 z-20 flex justify-between items-center">
                     <button onclick="window.navigateTo('grand-hall')" class="text-[#C5A059] text-xl drop-shadow-md"><i class="fa-solid fa-arrow-left"></i> Voltar</button>
                     <div class="text-[#C5A059] font-cinzel font-bold text-lg tracking-widest drop-shadow-md">INSTRUÇÃO</div>
                     <div class="w-10"></div>
                 </div>
                 
-                <div class="pb-40">
-                    <div class="w-full h-[65vh] shrink-0 netflix-hero relative flex flex-col justify-end p-6">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#141414] via-[#141414]/20 to-transparent"></div>
-                        <div class="relative z-10 mb-2">
-                            <span class="bg-[#700F14] text-white text-xs font-bold px-2 py-1 rounded uppercase tracking-wider mb-2 inline-block">Módulo 2 - Destaque</span>
-                            <h1 class="text-3xl font-cinzel text-white font-bold leading-tight mb-2 drop-shadow-lg">O Rosário como Arma</h1>
-                            <p class="text-base text-gray-300 mb-4 max-w-[90%] line-clamp-3">Descubra a mentalidade da "Batalha Espiritual" e a eficácia histórica do Rosário.</p>
-                            <div class="flex gap-3">
-                                <button onclick="window.openInstruction('aula1-2')" class="bg-white text-black px-4 py-2 rounded font-bold text-sm flex items-center hover:bg-gray-200 transition-colors">
-                                    <i class="fa-solid fa-image mr-2"></i> Visualizar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="instruction-content" class="pt-4 px-2"></div>
+                <div class="flex flex-col items-center justify-center h-full">
+                    <i class="fa-solid fa-person-praying text-6xl text-[#C5A059] mb-6 opacity-50"></i>
+                    <h2 class="text-2xl font-cinzel text-[#C5A059] mb-4">Em Atualização</h2>
+                    <p class="text-[#e0d0c0] font-serif text-lg max-w-md mb-8">
+                        A Sala de Instrução está em atualização.<br>
+                        Em breve estará novamente disponível com novos conteúdos para sua batalha espiritual.
+                    </p>
+                    
+                    <button onclick="window.navigateTo('battle-selection')" class="px-8 py-3 bg-gradient-to-r from-[#700F14] to-[#500a0e] text-[#F4F0EC] font-cinzel font-bold text-sm rounded border border-[#8a6e2f] shadow-lg hover:scale-105 transition-transform flex items-center gap-2">
+                        <i class="fa-solid fa-arrow-right"></i> IR PARA ORAÇÃO DO SANTO ROSÁRIO
+                    </button>
+                </div>
+            </main>
+
+            <!-- VIEW: LIBRARY ROOM (NOVA TELA) -->
+            <main id="view-library-room" class="hidden absolute inset-0 bg-[#1a0f0c] z-40 flex flex-col items-center justify-center text-center p-6 screen-transition w-full">
+                <div class="absolute top-0 left-0 w-full p-4 z-20 flex justify-between items-center">
+                    <button onclick="window.navigateTo('grand-hall')" class="text-[#C5A059] text-xl drop-shadow-md"><i class="fa-solid fa-arrow-left"></i> Voltar</button>
+                    <div class="text-[#C5A059] font-cinzel font-bold text-lg tracking-widest drop-shadow-md">BIBLIOTECA</div>
+                    <div class="w-10"></div>
+                </div>
+                
+                <div class="flex flex-col items-center justify-center h-full">
+                    <i class="fa-solid fa-book-bible text-6xl text-[#C5A059] mb-6 opacity-50"></i>
+                    <h2 class="text-2xl font-cinzel text-[#C5A059] mb-4">Em Atualização</h2>
+                    <p class="text-[#e0d0c0] font-serif text-lg max-w-md mb-8">
+                        A Biblioteca Católica está em atualização.<br>
+                        Em breve estará disponível com acervo espiritual para seus estudos.
+                    </p>
+                    
+                    <button onclick="window.navigateTo('battle-selection')" class="px-8 py-3 bg-gradient-to-r from-[#700F14] to-[#500a0e] text-[#F4F0EC] font-cinzel font-bold text-sm rounded border border-[#8a6e2f] shadow-lg hover:scale-105 transition-transform flex items-center gap-2">
+                        <i class="fa-solid fa-arrow-right"></i> IR PARA ORAÇÃO DO SANTO ROSÁRIO
+                    </button>
                 </div>
             </main>
 
@@ -320,7 +343,7 @@
                 </div>
             </main>
 
-            <!-- VIEW: Prayer Interface -->
+            <!-- VIEW: Prayer Interface (FIXED MOBILE LAYOUT - Button Moved) -->
             <main id="view-prayer" class="hidden fixed inset-0 z-50 flex flex-col bg-[#1a0f0c]">
                 
                 <!-- Top Bar -->
@@ -377,23 +400,45 @@
 
     <!-- Logic -->
     <script>
-        const genericAulaText = "<h3>Conteúdo do Módulo</h3><p>Este conteúdo está sendo preparado para as próximas atualizações.</p>";
-        const aula1_def_Text = "<h3>O que é o Rosário?</h3><p>É uma oração cristocêntrica...</p>"; 
-
-        const instructionData = [
-             {
-                category: "Módulo 1: Primeiros Passos",
-                items: [
-                    { id: "rosario-def", title: "Aula 1: O que é o Rosário?", img: "https://images.unsplash.com/photo-1518176258769-f227c798150e?q=80&w=2070&auto=format&fit=crop", content: aula1_def_Text }
-                ]
-            }
-        ];
+        const instructionData = []; 
 
         let currentInstructionList = [];
         let currentInstructionIndex = 0;
 
+        // CARROSSEL DE PADRE PIO
+        const padrePioQuotes = [
+            "Amai a Nossa Senhora e rezem o terço, porque o seu terço é a arma contra todos os males do mundo de hoje.",
+            "Ande sempre com um terço, mesmo sem vontade de rezar! As contas do meu Rosário são balas de artilharia, dão combate no inferno quando eu rezo Ave Maria.",
+            "Em tempos de escuridão, segurar o Rosário é como segurar a mão da Mãe Santíssima.",
+            "O Santo Rosário é uma repetição de Ave-Marias, com as quais se pode bater, vencer e destruir todos os demônios do inferno.",
+            "Reze o Rosário todos os dias. Abandone-se nas mãos de Maria. Ela vai cuidar de você.",
+            "Amai Nossa Senhora e fazei que a amem. Sempre reze o rosário e recite tantos quanto puder."
+        ];
+
+        let quoteIdx = 0;
+        function startQuoteCarousel() {
+            const textEl = document.getElementById('quote-text');
+            const container = document.getElementById('quote-container');
+            if(!textEl || !container) return;
+
+            // Inicia o loop
+            setInterval(() => {
+                // 1. Fade Out
+                container.style.opacity = '0';
+                
+                setTimeout(() => {
+                    // 2. Troca o texto
+                    quoteIdx = (quoteIdx + 1) % padrePioQuotes.length;
+                    textEl.innerText = `"${padrePioQuotes[quoteIdx]}"`;
+                    
+                    // 3. Fade In
+                    container.style.opacity = '0.9'; // Restaura a opacidade
+                }, 1000); // Tempo da transição do CSS
+            }, 12000); // Tempo de leitura (12 segundos)
+        }
+
         window.navigateTo = function(screenId) {
-            const views = ['view-grand-hall', 'view-battle-selection', 'view-instruction-room', 'view-instruction-detail', 'view-prayer'];
+            const views = ['view-grand-hall', 'view-battle-selection', 'view-instruction-room', 'view-instruction-detail', 'view-prayer', 'view-library-room'];
             views.forEach(id => {
                 const el = document.getElementById(id);
                 if(el) el.classList.add('hidden');
@@ -405,19 +450,19 @@
             } else {
                 if(header) header.classList.add('hidden');
             }
-            document.getElementById('view-' + screenId).classList.remove('hidden');
-            if(screenId === 'instruction-room') loadInstructionContent();
+            
+            const viewEl = document.getElementById('view-' + screenId);
+            if(viewEl) viewEl.classList.remove('hidden');
         };
 
         window.openInstruction = function(itemId) {
-            window.navigateTo('instruction-detail');
+            // Maintenance mode
         };
         
-        function loadInstructionContent() {
-            const container = document.getElementById('instruction-content');
-            if(!container || container.children.length > 0) return;
-        }
+        window.prevInstruction = function() {};
+        window.nextInstruction = function() {};
 
+        // --- 3D & PRAYER LOGIC ---
         const mysterySetsOrder = ['gozosos', 'luminosos', 'dolorosos', 'gloriosos'];
         const setDisplayNames = {
             'gozosos': 'MISTÉRIOS GOZOSOS',
@@ -435,10 +480,6 @@
             jaculatoriaMaria: `Ó Maria concebida sem pecado, rogai por nós, que recorremos a Vós.`
         };
 
-        // ---------------------------------------------------------
-        // DATABASE: THEMES & INTENTIONS
-        // ---------------------------------------------------------
-        
         // 1. Common Mysteries for everyone (Titles & Verses)
         const baseMysteries = {
             'gozosos': [
@@ -535,8 +576,6 @@
             }
         };
 
-
-        // State
         let currentIntention = 'casamento'; 
         let currentStep = 0;
         let scene, camera, renderer, rosaryGroup, beads = [], isDragging = false, previousMousePosition = { x: 0, y: 0 };
@@ -588,6 +627,9 @@
             
             if(animationId) cancelAnimationFrame(animationId);
             animate();
+            
+            // Start Carousel
+            startQuoteCarousel();
         };
 
         function generateFullRosaryMesh() {
@@ -768,7 +810,6 @@
             const maryImg = "https://i.postimg.cc/Nf2Pvf05/3460335d72f92902a928fc13a363c05c.jpg";
             let currentImg = maryImg;
             
-            // Fetch Theme Data
             const theme = rosaryThemes[currentIntention] || rosaryThemes['casamento'];
 
             if (currentStep === 0) {
@@ -801,6 +842,8 @@
                     const innerStep = stepInSet % 12;
                     const mystery = currentMysteries[decadeIndex];
                     
+                    // Calculate global index of the mystery to fetch intention from flat array
+                    // Gozosos (0-4), Luminosos (5-9), Dolorosos (10-14), Gloriosos (15-19)
                     const globalDecadeIndex = (setIndex * 5) + decadeIndex;
                     const intentionText = theme.intentions[globalDecadeIndex] || "Pela graça de Deus.";
 
@@ -839,6 +882,12 @@
                 document.getElementById('counter-display').innerText = `${currentStep}`;
             }
         }
+
+        // Inicializar Carrossel
+        startQuoteCarousel();
+        
+        // Inicializar 3D ao carregar a página (para o Grand Hall, embora oculto, prepara o contexto)
+        // window.addEventListener('load', window.init3D); 
     </script>
 </body>
 </html>
