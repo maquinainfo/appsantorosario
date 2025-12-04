@@ -32,7 +32,7 @@
         /* --- Global Resets & Typography --- */
         html {
             height: 100%;
-            height: 100dvh; /* Altura dinâmica para mobile */
+            height: 100dvh; 
             overflow: hidden;
         }
 
@@ -43,7 +43,7 @@
             margin: 0;
             padding: 0;
             overflow: hidden; 
-            position: fixed; /* Trava a rolagem elástica no iOS */
+            position: fixed;
             inset: 0;
             background-color: var(--deep-sepia);
             color: var(--marble-white);
@@ -117,9 +117,9 @@
         .animate-shine { animation: shine 1.5s infinite; }
         
         /* Reading View Styles */
-        .article-content p { margin-bottom: 1rem; line-height: 1.6; }
-        .article-content h3 { color: #C5A059; margin-top: 2rem; margin-bottom: 0.5rem; border-bottom: 1px solid #3d271e; padding-bottom: 0.2rem; font-family: 'Cinzel', serif; font-weight: bold; font-size: 1.2rem; }
-        .article-content h4 { color: #e0d0c0; margin-top: 1.5rem; margin-bottom: 0.4rem; font-weight: bold; font-size: 1.1rem; }
+        .article-content p { margin-bottom: 1rem; line-height: 1.6; font-size: 1.125rem; }
+        .article-content h3 { color: #C5A059; margin-top: 2rem; margin-bottom: 0.5rem; border-bottom: 1px solid #3d271e; padding-bottom: 0.2rem; font-family: 'Cinzel', serif; font-weight: bold; font-size: 1.4rem; }
+        .article-content h4 { color: #e0d0c0; margin-top: 1.5rem; margin-bottom: 0.4rem; font-weight: bold; font-size: 1.25rem; }
         .article-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: #a89078; }
         .article-content ol { list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 1rem; color: #a89078; }
         .article-content li { margin-bottom: 0.5rem; }
@@ -159,7 +159,6 @@
             .nav-next { right: 20px; }
         }
         
-        /* Safe Area for iPhone Home Bar */
         .safe-area-pb {
             padding-bottom: max(20px, env(safe-area-inset-bottom));
         }
@@ -193,9 +192,10 @@
                             <h3 class="text-xs font-bold text-[#e0d0c0] leading-tight font-cinzel uppercase tracking-wide">Biblioteca<br>Católica</h3>
                         </div>
                     </div>
-                    <div onclick="window.navigateTo('battle-selection')" class="menu-card card-battle-featured h-56 rounded-lg flex items-center justify-center relative group shrink-0 overflow-hidden p-4" style="background: linear-gradient(145deg, rgba(62, 34, 25, 0.85), rgba(30, 15, 11, 0.95)); border: 2px solid #8b5a2b; cursor: pointer;">
+                    <div onclick="window.navigateTo('battle-selection')" class="menu-card card-battle-featured h-60 rounded-lg flex items-center justify-center relative group shrink-0 overflow-hidden p-4" style="background: linear-gradient(145deg, rgba(62, 34, 25, 0.85), rgba(30, 15, 11, 0.95)); border: 2px solid #8b5a2b; cursor: pointer;">
                         <div class="flex flex-row items-center w-full h-full z-10 gap-4">
                             <div class="w-1/3 h-full relative flex items-center justify-center">
+                                 <!-- SVG Rosary Icon -->
                                  <svg class="w-full h-full drop-shadow-2xl" viewBox="0 0 100 160" preserveAspectRatio="xMidYMid meet">
                                     <defs>
                                         <radialGradient id="woodBead" cx="35%" cy="35%" r="65%"><stop offset="0%" stop-color="#e6cca8" /><stop offset="50%" stop-color="#c19a6b" /><stop offset="100%" stop-color="#8d6e63" /></radialGradient>
@@ -209,25 +209,25 @@
                                  </svg>
                             </div>
                             <div class="w-2/3 text-left pl-4 border-l border-[#C5A059]/30">
-                                <h2 class="text-2xl text-[#fff] font-bold drop-shadow-lg cinzel-font leading-tight mb-1">Oração do<br>Rosário</h2>
-                                <p class="text-[10px] text-[#C5A059] uppercase tracking-widest mb-3">Rosário Completo</p>
-                                <span class="text-[10px] bg-[#C5A059]/20 text-[#C5A059] px-2 py-1 rounded border border-[#C5A059]/40">Entrar</span>
+                                <h2 class="text-3xl text-[#fff] font-bold drop-shadow-lg cinzel-font leading-tight mb-1">Oração do<br>Rosário</h2>
+                                <p class="text-xs text-[#C5A059] uppercase tracking-widest mb-3">Campo de Batalha</p>
+                                <span class="text-xs bg-[#C5A059]/20 text-[#C5A059] px-3 py-1.5 rounded border border-[#C5A059]/40 font-bold">Entrar</span>
                             </div>
                         </div>
                     </div>
                     <!-- Other Cards -->
-                    <div class="menu-card h-24 flex flex-row items-center justify-start px-6 gap-4 group shrink-0" style="background: rgba(20, 10, 10, 0.75); backdrop-filter: blur(8px); border: 1px solid rgba(197, 160, 89, 0.4); border-radius: 8px; cursor: pointer;">
-                        <div class="w-10 h-10 rounded-full bg-[#3e2219] shadow-inner flex items-center justify-center border border-[#8a6e2f]">
-                            <i class="fa-solid fa-book-open-reader text-[#ebd7b9]"></i>
+                    <div onclick="window.open('https://biblia.paulus.com.br/', '_blank')" class="menu-card h-24 flex flex-row items-center justify-start px-6 gap-4 group shrink-0" style="background: rgba(20, 10, 10, 0.75); backdrop-filter: blur(8px); border: 1px solid rgba(197, 160, 89, 0.4); border-radius: 8px; cursor: pointer;">
+                        <div class="w-12 h-12 rounded-full bg-[#3e2219] shadow-inner flex items-center justify-center border border-[#8a6e2f]">
+                            <i class="fa-solid fa-book-open-reader text-xl text-[#ebd7b9]"></i>
                         </div>
                         <div class="text-left">
-                            <h3 class="text-sm font-bold text-[#e0d0c0] leading-tight font-cinzel uppercase">Leitura Orante</h3>
-                            <p class="text-[10px] text-gray-400">Sagradas Escrituras</p>
+                            <h3 class="text-base font-bold text-[#e0d0c0] leading-tight font-cinzel uppercase">Leitura Orante</h3>
+                            <p class="text-xs text-gray-400">Sagradas Escrituras</p>
                         </div>
                     </div>
                     <div class="text-center mt-8 opacity-80 pb-10">
-                        <p class="text-[10px] text-[#C5A059] italic mb-1">"Quem reza se salva, quem não reza se condena."</p>
-                        <p class="text-[9px] text-gray-400 font-bold uppercase tracking-widest">- Santo Afonso -</p>
+                        <p class="text-xs text-[#C5A059] italic mb-1">"Quem reza se salva, quem não reza se condena."</p>
+                        <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">- Santo Afonso -</p>
                     </div>
                 </div>
             </main>
@@ -244,9 +244,9 @@
                     <div class="w-full h-[65vh] shrink-0 netflix-hero relative flex flex-col justify-end p-6">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#141414] via-[#141414]/20 to-transparent"></div>
                         <div class="relative z-10 mb-2">
-                            <span class="bg-[#700F14] text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider mb-2 inline-block">Módulo 2 - Destaque</span>
+                            <span class="bg-[#700F14] text-white text-xs font-bold px-2 py-1 rounded uppercase tracking-wider mb-2 inline-block">Módulo 2 - Destaque</span>
                             <h1 class="text-3xl font-cinzel text-white font-bold leading-tight mb-2 drop-shadow-lg">O Rosário como Arma</h1>
-                            <p class="text-sm text-gray-300 mb-4 max-w-[90%] line-clamp-3">Descubra a mentalidade da "Batalha Espiritual" e a eficácia histórica do Rosário.</p>
+                            <p class="text-base text-gray-300 mb-4 max-w-[90%] line-clamp-3">Descubra a mentalidade da "Batalha Espiritual" e a eficácia histórica do Rosário.</p>
                             <div class="flex gap-3">
                                 <button onclick="window.openInstruction('aula1-2')" class="bg-white text-black px-4 py-2 rounded font-bold text-sm flex items-center hover:bg-gray-200 transition-colors">
                                     <i class="fa-solid fa-image mr-2"></i> Visualizar
@@ -261,14 +261,14 @@
             <!-- VIEW: INSTRUCTION DETAIL -->
             <main id="view-instruction-detail" class="hidden absolute inset-0 bg-[#1a0f0c] z-50 screen-transition scroll-container custom-scroll w-full">
                 <div class="sticky top-0 z-50 bg-[#150a08]/95 backdrop-blur-sm border-b border-[#3d271e] p-4 flex justify-between items-center shadow-lg">
-                    <button onclick="window.navigateTo('instruction-room')" class="text-[#C5A059] text-sm"><i class="fa-solid fa-arrow-left"></i> Voltar</button>
-                    <span class="text-[#8a6e2f] text-xs font-bold tracking-widest uppercase">Leitura</span>
+                    <button onclick="window.navigateTo('instruction-room')" class="text-[#C5A059] text-base"><i class="fa-solid fa-arrow-left"></i> Voltar</button>
+                    <span class="text-[#8a6e2f] text-sm font-bold tracking-widest uppercase">Leitura</span>
                     <div class="w-8"></div>
                 </div>
                 
                 <div class="p-6 max-w-2xl mx-auto w-full pb-32 relative">
                     <img id="detail-img" src="" alt="Destaque" class="w-full h-48 object-cover rounded-lg mb-6 shadow-md border border-[#3d271e]">
-                    <h1 id="detail-title" class="text-2xl font-cinzel text-[#C5A059] font-bold mb-4 leading-tight"></h1>
+                    <h1 id="detail-title" class="text-3xl font-cinzel text-[#C5A059] font-bold mb-4 leading-tight"></h1>
                     <div id="detail-content" class="article-content text-[#e0d0c0] font-serif text-lg"></div>
                 </div>
 
@@ -284,43 +284,50 @@
             <!-- VIEW: Battle Selection -->
             <main id="view-battle-selection" class="hidden absolute inset-0 bg-[#1a0f0c] z-40 flex flex-col screen-transition">
                 <div class="flex items-center justify-between p-4 border-b border-[#3d271e] shrink-0 bg-[#22120d]">
-                    <button onclick="window.navigateTo('grand-hall')" class="text-[#C5A059]"><i class="fa-solid fa-chevron-left"></i> Voltar</button>
-                    <span class="text-[#C5A059] text-sm font-bold uppercase">Arsenal Espiritual</span>
+                    <button onclick="window.navigateTo('grand-hall')" class="text-[#C5A059] text-lg"><i class="fa-solid fa-chevron-left"></i> Voltar</button>
+                    <div class="text-center">
+                        <span class="text-[#C5A059] text-base font-bold uppercase block">Arsenal Espiritual</span>
+                        <span class="text-xs text-[#a89078] italic block mt-0.5">Rosário por intenção - escolha:</span>
+                    </div>
                     <div class="w-8"></div>
                 </div>
                 
                 <div class="flex-grow scroll-container custom-scroll p-4 gap-3 flex flex-col pb-40 max-w-md mx-auto w-full">
-                    <button onclick="window.startPrayer('casamento')" class="battle-btn w-full p-4 rounded text-left flex items-center group">
-                        <div class="w-10 h-10 rounded-full bg-[#3d221a] flex items-center justify-center border border-[#8a6e2f] mr-4 shadow-inner"><i class="fa-solid fa-heart text-[#C5A059]"></i></div>
-                        <div><h3 class="text-[#f0e6d2] font-cinzel text-sm">Restauração Conjugal</h3><p class="text-[10px] text-gray-400 uppercase tracking-widest">Rosário Completo (200 Aves)</p></div>
+                    <button onclick="window.startPrayer('casamento')" class="battle-btn w-full p-5 rounded text-left flex items-center group">
+                        <div class="w-12 h-12 rounded-full bg-[#3d221a] flex items-center justify-center border border-[#8a6e2f] mr-4 shadow-inner"><i class="fa-solid fa-heart text-[#C5A059] text-xl"></i></div>
+                        <div><h3 class="text-[#f0e6d2] font-cinzel text-base font-bold">Restauração Conjugal</h3><p class="text-xs text-gray-400 uppercase tracking-widest mt-1">Foco: União e Cura</p></div>
                     </button>
-                    <button onclick="window.startPrayer('filhos')" class="battle-btn w-full p-4 rounded text-left flex items-center group">
-                        <div class="w-10 h-10 rounded-full bg-[#3d221a] flex items-center justify-center border border-[#8a6e2f] mr-4 shadow-inner"><i class="fa-solid fa-shield-halved text-[#C5A059]"></i></div>
-                        <div><h3 class="text-[#f0e6d2] font-cinzel text-sm">Blindagem dos Filhos</h3><p class="text-[10px] text-gray-400 uppercase tracking-widest">Foco: Proteção</p></div>
+                    <button onclick="window.startPrayer('filhos')" class="battle-btn w-full p-5 rounded text-left flex items-center group">
+                        <div class="w-12 h-12 rounded-full bg-[#3d221a] flex items-center justify-center border border-[#8a6e2f] mr-4 shadow-inner"><i class="fa-solid fa-shield-halved text-[#C5A059] text-xl"></i></div>
+                        <div><h3 class="text-[#f0e6d2] font-cinzel text-base font-bold">Blindagem dos Filhos</h3><p class="text-xs text-gray-400 uppercase tracking-widest mt-1">Foco: Proteção e Livramento</p></div>
                     </button>
-                    <button onclick="window.startPrayer('financas')" class="battle-btn w-full p-4 rounded text-left flex items-center group">
-                        <div class="w-10 h-10 rounded-full bg-[#3d221a] flex items-center justify-center border border-[#8a6e2f] mr-4 shadow-inner"><i class="fa-solid fa-door-open text-[#C5A059]"></i></div>
-                        <div><h3 class="text-[#f0e6d2] font-cinzel text-sm">Providência</h3><p class="text-[10px] text-gray-400 uppercase tracking-widest">Foco: Finanças</p></div>
+                    <button onclick="window.startPrayer('financas')" class="battle-btn w-full p-5 rounded text-left flex items-center group">
+                        <div class="w-12 h-12 rounded-full bg-[#3d221a] flex items-center justify-center border border-[#8a6e2f] mr-4 shadow-inner"><i class="fa-solid fa-door-open text-[#C5A059] text-xl"></i></div>
+                        <div><h3 class="text-[#f0e6d2] font-cinzel text-base font-bold">Providência Divina</h3><p class="text-xs text-gray-400 uppercase tracking-widest mt-1">Foco: Provisão e Trabalho</p></div>
                     </button>
-                    <button onclick="window.startPrayer('ansiedade')" class="battle-btn w-full p-4 rounded text-left flex items-center group">
-                        <div class="w-10 h-10 rounded-full bg-[#3d221a] flex items-center justify-center border border-[#8a6e2f] mr-4 shadow-inner"><i class="fa-solid fa-dove text-[#C5A059]"></i></div>
-                        <div><h3 class="text-[#f0e6d2] font-cinzel text-sm">Libertação da Ansiedade</h3><p class="text-[10px] text-gray-400 uppercase tracking-widest">Foco: Paz Interior</p></div>
+                    <button onclick="window.startPrayer('ansiedade')" class="battle-btn w-full p-5 rounded text-left flex items-center group">
+                        <div class="w-12 h-12 rounded-full bg-[#3d221a] flex items-center justify-center border border-[#8a6e2f] mr-4 shadow-inner"><i class="fa-solid fa-dove text-[#C5A059] text-xl"></i></div>
+                        <div><h3 class="text-[#f0e6d2] font-cinzel text-base font-bold">Libertação da Ansiedade</h3><p class="text-xs text-gray-400 uppercase tracking-widest mt-1">Foco: Paz e Confiança</p></div>
                     </button>
-                    <button onclick="window.startPrayer('libertacao')" class="battle-btn w-full p-4 rounded text-left flex items-center group">
-                        <div class="w-10 h-10 rounded-full bg-[#3d221a] flex items-center justify-center border border-[#8a6e2f] mr-4 shadow-inner"><i class="fa-solid fa-cross text-[#C5A059]"></i></div>
-                        <div><h3 class="text-[#f0e6d2] font-cinzel text-sm">Cura e Libertação</h3><p class="text-[10px] text-gray-400 uppercase tracking-widest">Foco: Combate</p></div>
+                    <button onclick="window.startPrayer('libertacao')" class="battle-btn w-full p-5 rounded text-left flex items-center group">
+                        <div class="w-12 h-12 rounded-full bg-[#3d221a] flex items-center justify-center border border-[#8a6e2f] mr-4 shadow-inner"><i class="fa-solid fa-cross text-[#C5A059] text-xl"></i></div>
+                        <div><h3 class="text-[#f0e6d2] font-cinzel text-base font-bold">Cura e Libertação</h3><p class="text-xs text-gray-400 uppercase tracking-widest mt-1">Foco: Saúde e Quebra de Amarras</p></div>
+                    </button>
+                    <button onclick="window.startPrayer('dominio')" class="battle-btn w-full p-5 rounded text-left flex items-center group">
+                        <div class="w-12 h-12 rounded-full bg-[#3d221a] flex items-center justify-center border border-[#8a6e2f] mr-4 shadow-inner"><i class="fa-solid fa-scroll text-[#C5A059] text-xl"></i></div>
+                        <div><h3 class="text-[#f0e6d2] font-cinzel text-base font-bold">Domínio da Arma</h3><p class="text-xs text-gray-400 uppercase tracking-widest mt-1">Foco: Autoridade e Combate</p></div>
                     </button>
                 </div>
             </main>
 
-            <!-- VIEW: Prayer Interface (FIXED MOBILE LAYOUT - Button Moved) -->
+            <!-- VIEW: Prayer Interface -->
             <main id="view-prayer" class="hidden fixed inset-0 z-50 flex flex-col bg-[#1a0f0c]">
                 
                 <!-- Top Bar -->
-                <div class="shrink-0 bg-[#150a08] border-b border-[#3d271e] z-30 shadow-md flex items-center justify-between px-4 h-12">
-                    <button onclick="window.exitPrayer()" class="text-[#8a6e2f] text-sm"><i class="fa-solid fa-chevron-left"></i> Voltar</button>
-                    <span id="prayer-top-title" class="text-[#C5A059] text-xs font-bold uppercase tracking-widest truncate max-w-[150px]">Título</span>
-                    <button onclick="window.resetRosary()" class="text-[#700F14] hover:text-red-400"><i class="fa-solid fa-rotate-right"></i></button>
+                <div class="shrink-0 bg-[#150a08] border-b border-[#3d271e] z-30 shadow-md flex items-center justify-between px-4 h-14">
+                    <button onclick="window.exitPrayer()" class="text-[#8a6e2f] text-base"><i class="fa-solid fa-chevron-left"></i> Voltar</button>
+                    <span id="prayer-top-title" class="text-[#C5A059] text-sm font-bold uppercase tracking-widest truncate max-w-[180px]">Título</span>
+                    <button onclick="window.resetRosary()" class="text-[#700F14] text-xl hover:text-red-400"><i class="fa-solid fa-rotate-right"></i></button>
                 </div>
 
                 <!-- Main Content Flex -->
@@ -338,29 +345,28 @@
 
                         <!-- 3D Scene Layer -->
                         <div id="scene-container" class="w-full h-full relative z-10" style="pointer-events: auto;"></div>
-                        <div class="absolute bottom-2 right-2 text-[10px] text-gray-400 pointer-events-none opacity-70 z-20"><i class="fa-solid fa-arrows-rotate"></i> Gire</div>
+                        <div class="absolute bottom-2 right-2 text-xs text-gray-400 pointer-events-none opacity-70 z-20"><i class="fa-solid fa-arrows-rotate"></i> Gire</div>
                     </div>
 
                     <!-- LEFT SIDE: Instructions (Mobile: Bottom 60% | Desktop: Left 50%) -->
-                    <!-- The key fix: Button is now at the TOP of this section (below rosary) -->
                     <div class="flex-1 w-full md:w-1/2 relative bg-[#1a0e0a] order-2 md:order-1 flex flex-col overflow-hidden min-h-0">
                         
                         <!-- CONTROLS: MOVED HERE (Below Rosary) -->
-                        <div class="shrink-0 p-3 bg-[#150a08] border-b border-[#3d271e] z-30 shadow-lg">
+                        <div class="shrink-0 p-4 bg-[#150a08] border-b border-[#3d271e] z-30 shadow-lg">
                              <div class="flex justify-between items-end mb-2 px-1">
-                                <span class="text-[10px] text-gray-500">Progresso Geral</span>
-                                <span id="counter-display" class="text-sm font-bold text-[#C5A059]">0/200</span>
+                                <span class="text-xs text-gray-500">Progresso Geral</span>
+                                <span id="counter-display" class="text-base font-bold text-[#C5A059]">0/200</span>
                             </div>
-                            <button id="prayer-action-btn" onclick="window.nextBead()" class="w-full py-3 bg-gradient-to-r from-[#700F14] to-[#500a0e] text-[#F4F0EC] font-cinzel text-base border border-[#8a6e2f] rounded shadow-md relative overflow-hidden group active:scale-95 transition-transform">
+                            <button id="prayer-action-btn" onclick="window.nextBead()" class="w-full py-4 bg-gradient-to-r from-[#700F14] to-[#500a0e] text-[#F4F0EC] font-cinzel text-lg border border-[#8a6e2f] rounded shadow-md relative overflow-hidden group active:scale-95 transition-transform">
                                 <span id="prayer-action-text" class="relative z-10 flex items-center justify-center"><i class="fa-solid fa-hands-praying mr-2"></i> Avançar</span>
                                 <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity"></div>
                             </button>
                         </div>
                         
                         <!-- Scrollable Text Area (Fills remaining space below button) -->
-                        <div class="flex-1 overflow-y-auto custom-scroll p-4 text-center">
-                            <h2 id="screen-title" class="text-lg font-bold cinzel-font text-[#C5A059] mb-4 leading-tight uppercase border-b border-[#5c3a21] pb-2">Título</h2>
-                            <div id="screen-body" class="text-sm font-serif text-[#F4F0EC] leading-relaxed mb-3 pb-10">Carregando...</div>
+                        <div class="flex-1 overflow-y-auto custom-scroll p-6 text-center">
+                            <h2 id="screen-title" class="text-2xl font-bold cinzel-font text-[#C5A059] mb-4 leading-tight uppercase border-b border-[#5c3a21] pb-2">Título</h2>
+                            <div id="screen-body" class="text-lg font-serif text-[#F4F0EC] leading-relaxed mb-3 pb-10">Carregando...</div>
                         </div>
                         
                     </div>
@@ -429,54 +435,106 @@
             jaculatoriaMaria: `Ó Maria concebida sem pecado, rogai por nós, que recorremos a Vós.`
         };
 
-        const mysteriesData = {
+        // ---------------------------------------------------------
+        // DATABASE: THEMES & INTENTIONS
+        // ---------------------------------------------------------
+        
+        // 1. Common Mysteries for everyone (Titles & Verses)
+        const baseMysteries = {
             'gozosos': [
-                { title: "1º MISTÉRIO: A ANUNCIAÇÃO DO ANJO A MARIA", verse: "Eis aqui a serva do Senhor; faça-se em mim segundo a tua palavra. (Lc 1,38)", intention: "Jesus, restaura nosso amor e dá-nos um novo começo, como Maria acolheu a Tua vontade." },
-                { title: "2º MISTÉRIO: A VISITAÇÃO DE MARIA A ISABEL", verse: "Maria levantou-se e foi apressadamente. (Lc 1,39)", intention: "Maria, leva ao nosso casamento a graça da reconciliação e da proximidade verdadeira." },
-                { title: "3º MISTÉRIO: O NASCIMENTO DE JESUS", verse: "Ela deu à luz o seu filho primogênito. (Lc 2,7)", intention: "Jesus, renasce em nosso matrimônio e devolve-nos a ternura e o amor." },
-                { title: "4º MISTÉRIO: A APRESENTAÇÃO DE JESUS NO TEMPLO", verse: "Levaram-no a Jerusalém para apresentá-lo ao Senhor. (Lc 2,22)", intention: "Jesus, consagra nosso casamento e fortalece nossos laços." },
-                { title: "5º MISTÉRIO: A PERDA E O ENCONTRO DO MENINO JESUS", verse: "Não sabíeis que devo ocupar-me das coisas de meu Pai? (Lc 2,49)", intention: "Jesus, restaura tudo o que se perdeu entre nós e conduz-nos de volta ao Teu caminho." }
+                { title: "1º MISTÉRIO: A ANUNCIAÇÃO DO ANJO A MARIA", verse: "Eis aqui a serva do Senhor; faça-se em mim segundo a tua palavra. (Lc 1,38)" },
+                { title: "2º MISTÉRIO: A VISITAÇÃO DE MARIA A ISABEL", verse: "Maria levantou-se e foi apressadamente. (Lc 1,39)" },
+                { title: "3º MISTÉRIO: O NASCIMENTO DE JESUS", verse: "Ela deu à luz o seu filho primogênito. (Lc 2,7)" },
+                { title: "4º MISTÉRIO: A APRESENTAÇÃO DE JESUS NO TEMPLO", verse: "Levaram-no a Jerusalém para apresentá-lo ao Senhor. (Lc 2,22)" },
+                { title: "5º MISTÉRIO: A PERDA E O ENCONTRO DO MENINO JESUS", verse: "Não sabíeis que devo ocupar-me das coisas de meu Pai? (Lc 2,49)" }
             ],
             'luminosos': [
-                { title: "1º MISTÉRIO: O BATISMO DE JESUS NO JORDÃO", verse: "Este é o meu Filho amado. (Mt 3,17)", intention: "Jesus, purifica nosso matrimônio e renova nossa aliança." },
-                { title: "2º MISTÉRIO: AS BODAS DE CANÁ", verse: "Fazei tudo o que Ele vos disser. (Jo 2,5)", intention: "Maria, transforma nossa relação como Jesus transformou a água em vinho novo." },
-                { title: "3º MISTÉRIO: O ANÚNCIO DO REINO DE DEUS", verse: "Convertei-vos e crede no Evangelho. (Mc 1,15)", intention: "Jesus, converte nossos corações e remove tudo que destrói nossa união." },
-                { title: "4º MISTÉRIO: A TRANSFIGURAÇÃO DE JESUS", verse: "Este é o meu Filho amado; escutai-o. (Mt 17,5)", intention: "Jesus, transforma nosso casamento com Tua luz e Tua graça." },
-                { title: "5º MISTÉRIO: A INSTITUIÇÃO DA EUCARISTIA", verse: "Isto é o meu corpo, que é dado por vós. (Lc 22,19)", intention: "Jesus, une-nos novamente no amor sacrificial e fiel." }
+                { title: "1º MISTÉRIO: O BATISMO DE JESUS NO JORDÃO", verse: "Este é o meu Filho amado. (Mt 3,17)" },
+                { title: "2º MISTÉRIO: AS BODAS DE CANÁ", verse: "Fazei tudo o que Ele vos disser. (Jo 2,5)" },
+                { title: "3º MISTÉRIO: O ANÚNCIO DO REINO DE DEUS", verse: "Convertei-vos e crede no Evangelho. (Mc 1,15)" },
+                { title: "4º MISTÉRIO: A TRANSFIGURAÇÃO DE JESUS", verse: "Este é o meu Filho amado; escutai-o. (Mt 17,5)" },
+                { title: "5º MISTÉRIO: A INSTITUIÇÃO DA EUCARISTIA", verse: "Isto é o meu corpo, que é dado por vós. (Lc 22,19)" }
             ],
             'dolorosos': [
-                { title: "1º MISTÉRIO: A AGONIA DE JESUS NO HORTO", verse: "Pai, se queres, afasta de mim este cálice. (Lc 22,42)", intention: "Jesus, cura nossas dores mais profundas e dá-nos força para continuar." },
-                { title: "2º MISTÉRIO: A FLAGELAÇÃO DE JESUS", verse: "Pilatos tomou Jesus e mandou flagelá-lo. (Jo 19,1)", intention: "Jesus, cura as feridas causadas pelas palavras e atitudes que machucaram nosso amor." },
-                { title: "3º MISTÉRIO: A COROAÇÃO DE ESPINHOS", verse: "Tecendo uma coroa de espinhos, puseram-lha sobre a cabeça. (Mt 27,29)", intention: "Jesus, liberta nosso casamento dos pensamentos que ferem e dividem." },
-                { title: "4º MISTÉRIO: O CAMINHO DO CALVÁRIO", verse: "Jesus saiu carregando a sua cruz. (Jo 19,17)", intention: "Jesus, ajuda-nos a carregar juntos nossa cruz com amor." },
-                { title: "5º MISTÉRIO: A CRUCIFIXÃO E MORTE DE JESUS", verse: "Pai, em tuas mãos entrego o meu espírito. (Lc 23,46)", intention: "Jesus, ressuscita o que morreu em nosso casamento e renova tudo em nós." }
+                { title: "1º MISTÉRIO: A AGONIA DE JESUS NO HORTO", verse: "Pai, se queres, afasta de mim este cálice. (Lc 22,42)" },
+                { title: "2º MISTÉRIO: A FLAGELAÇÃO DE JESUS", verse: "Pilatos tomou Jesus e mandou flagelá-lo. (Jo 19,1)" },
+                { title: "3º MISTÉRIO: A COROAÇÃO DE ESPINHOS", verse: "Tecendo uma coroa de espinhos, puseram-lha sobre a cabeça. (Mt 27,29)" },
+                { title: "4º MISTÉRIO: O CAMINHO DO CALVÁRIO", verse: "Jesus saiu carregando a sua cruz. (Jo 19,17)" },
+                { title: "5º MISTÉRIO: A CRUCIFIXÃO E MORTE DE JESUS", verse: "Pai, em tuas mãos entrego o meu espírito. (Lc 23,46)" }
             ],
             'gloriosos': [
-                { title: "1º MISTÉRIO: A RESSURREIÇÃO DE JESUS", verse: "Não está aqui; ressuscitou! (Lc 24,6)", intention: "Jesus, traz nova vida ao nosso casamento." },
-                { title: "2º MISTÉRIO: A ASCENSÃO DE JESUS AO CÉU", verse: "Foi elevado ao céu. (At 1,9)", intention: "Jesus, eleva nosso amor e guia-nos para um novo recomeço." },
-                { title: "3º MISTÉRIO: A VINDA DO ESPÍRITO SANTO", verse: "Todos ficaram cheios do Espírito Santo. (At 2,4)", intention: "Espírito Santo, renova nossa união e restaura o diálogo entre nós." },
-                { title: "4º MISTÉRIO: A ASSUNÇÃO DE MARIA", verse: "Apareceu um grande sinal no céu: uma mulher vestida de sol. (Ap 12,1)", intention: "Maria, toma nosso casamento sob tua proteção materna." },
-                { title: "5º MISTÉRIO: A COROAÇÃO DE MARIA RAINHA", verse: "Uma coroa de doze estrelas. (Ap 12,1)", intention: "Maria, Rainha da Paz, reina sobre nosso lar e devolve a harmonia ao nosso matrimônio." }
+                { title: "1º MISTÉRIO: A RESSURREIÇÃO DE JESUS", verse: "Não está aqui; ressuscitou! (Lc 24,6)" },
+                { title: "2º MISTÉRIO: A ASCENSÃO DE JESUS AO CÉU", verse: "Foi elevado ao céu. (At 1,9)" },
+                { title: "3º MISTÉRIO: A VINDA DO ESPÍRITO SANTO", verse: "Todos ficaram cheios do Espírito Santo. (At 2,4)" },
+                { title: "4º MISTÉRIO: A ASSUNÇÃO DE MARIA", verse: "Apareceu um grande sinal no céu: uma mulher vestida de sol. (Ap 12,1)" },
+                { title: "5º MISTÉRIO: A COROAÇÃO DE MARIA RAINHA", verse: "Uma coroa de doze estrelas. (Ap 12,1)" }
             ]
         };
 
-        const prayerIntro = {
-            title: "OFERECIMENTO INICIAL",
-            body: `<div class="text-sm">
-                <p class="mb-2 italic">"Maria Santíssima, Mãe de Jesus, ofereço este Santo Rosário pela restauração do meu matrimônio. Senhor Jesus, entra no nosso lar, cura nossas feridas, quebra todo orgulho, silêncio, frieza e divisão."</p>
-                <p class="mb-2 italic">"Que todo espírito de confusão e ataque espiritual seja afastado pelo Teu poder. Maria, Rainha da Paz, envolve nossa família no Teu manto, conduz nossos corações ao perdão, à fidelidade e ao amor que vem de Deus."</p>
-                <p class="font-bold">"Jesus e Maria, salvai e protegei nossa família. Amém."</p>
-            </div>`
+        // 2. Specific Intentions per Theme
+        const rosaryThemes = {
+            'casamento': {
+                title: "Restauração Conjugal",
+                intro: `<p class="mb-3 italic">"Maria Santíssima, Mãe de Jesus, ofereço este Santo Rosário pela restauração do meu matrimônio. Senhor Jesus, entra no nosso lar, cura nossas feridas, quebra todo orgulho, silêncio, frieza e divisão."</p><p class="mb-3 italic">"Que todo espírito de confusão e ataque espiritual seja afastado pelo Teu poder. Maria, Rainha da Paz, envolve nossa família no Teu manto, conduz nossos corações ao perdão, à fidelidade e ao amor que vem de Deus."</p><p class="font-bold text-[#C5A059]">"Jesus e Maria, salvai e protegei nossa família. Amém."</p>`,
+                intentions: [
+                    "Jesus, restaura nosso amor e dá-nos um novo começo.", "Maria, leva ao nosso casamento a graça da reconciliação.", "Jesus, renasce em nosso matrimônio e devolve-nos a ternura.", "Jesus, consagra nosso casamento e fortalece nossos laços.", "Jesus, restaura tudo o que se perdeu entre nós.", // Gozosos
+                    "Jesus, purifica nosso matrimônio e renova nossa aliança.", "Maria, transforma nossa relação em vinho novo.", "Jesus, converte nossos corações e remove a divisão.", "Jesus, transforma nosso casamento com Tua luz.", "Jesus, une-nos novamente no amor sacrificial.", // Luminosos
+                    "Jesus, cura nossas dores mais profundas.", "Jesus, cura as feridas causadas por palavras.", "Jesus, liberta nosso casamento de maus pensamentos.", "Jesus, ajuda-nos a carregar juntos nossa cruz.", "Jesus, ressuscita o que morreu em nosso casamento.", // Dolorosos
+                    "Jesus, traz nova vida ao nosso casamento.", "Jesus, eleva nosso amor e guia-nos.", "Espírito Santo, renova nossa união e diálogo.", "Maria, toma nosso casamento sob tua proteção.", "Maria, reina sobre nosso lar e devolve a harmonia." // Gloriosos
+                ]
+            },
+            'filhos': {
+                title: "Blindagem dos Filhos",
+                intro: `<p class="mb-3 italic">"Maria Santíssima, Mãe de Jesus, ofereço este Santo Rosário pela blindagem espiritual, emocional e física dos meus filhos. Senhor Jesus, envolve-os com Tua luz, protege-os de todo mal, livra-os das más companhias, dos perigos visíveis e invisíveis, de toda confusão, medo, mentira e ataque espiritual."</p><p class="mb-3 italic">"Que todo laço, palavra ou circunstância contrária à vontade de Deus seja quebrada pelo Teu poder. Maria, Mãe do Perpétuo Socorro, cobre meus filhos com Teu manto, conduze-os pela verdade, pureza, sabedoria e santidade."</p><p class="font-bold text-[#C5A059]">"Jesus e Maria, guardai e protegei os meus filhos hoje e sempre. Amém."</p>`,
+                intentions: [
+                    "Maria, ensina meus filhos a ouvirem a voz de Deus e obedecerem ao Seu chamado.", "Maria, visita espiritualmente meus filhos e leva a eles a graça da proteção e da alegria.", "Jesus, nasce todos os dias no coração dos meus filhos e guarda sua inocência e pureza.", "Jesus, consagra meus filhos ao Teu Sagrado Coração e livra-os de todo mal.", "Jesus, guia os passos dos meus filhos e guarda-os de todo desvio e perigo.", // Gozosos
+                    "Jesus, renova a graça do batismo nos meus filhos e protege sua identidade espiritual.", "Maria, intercede para que meus filhos tenham obediência, sabedoria e discernimento.", "Jesus, converte o coração dos meus filhos e livra-os das influências que os afastam de Ti.", "Jesus, ilumina a mente e o coração dos meus filhos e protege-os das trevas espirituais deste mundo.", "Jesus, alimenta espiritualmente meus filhos e guarda-os na Tua presença.", // Luminosos
+                    "Jesus, guarda meus filhos nas horas de medo, ansiedade e angústia.", "Jesus, protege meus filhos de toda violência física, moral e espiritual.", "Jesus, protege a mente dos meus filhos contra pensamentos de mentira, medo e confusão.", "Jesus, fortalece meus filhos em suas lutas e ajuda-os a vencer as dificuldades do caminho.", "Jesus, guarda a vida dos meus filhos e livra-os de todo perigo e destruição.", // Dolorosos
+                    "Jesus, ressuscita tudo o que há de bom nos meus filhos e protege seus sonhos e futuro.", "Jesus, eleva os pensamentos e caminhos dos meus filhos para as coisas do alto.", "Espírito Santo, enche os meus filhos com teus dons, sabedoria e proteção divina.", "Maria, assume e protege meus filhos sob teu manto maternal.", "Maria, Rainha do Céu, reina sobre a vida dos meus filhos e devolve-lhes paz e proteção." // Gloriosos
+                ]
+            },
+            'financas': {
+                title: "Providência Divina",
+                intro: `<p class="mb-3 italic">"Maria Santíssima, Mãe de Jesus, ofereço este Santo Rosário para que a divina Providência se manifeste em minha vida."</p><p class="mb-3 italic">"Senhor Jesus, abre portas onde há portas fechadas, descubra caminhos onde há bloqueios, alinha meu coração à Tua vontade e guia cada passo segundo o plano do Céu."</p><p class="mb-3 italic">"Maria, Mãe da Divina Providência, intercede para que não falte direção, trabalho honesto, portas abertas e provisão divina."</p><p class="mb-3 italic">"Que toda resistência espiritual seja quebrada e que eu viva confiante na ação amorosa de Deus."</p><p class="font-bold text-[#C5A059]">"Jesus e Maria, eu confio; venha o Teu Reino e faça-se a Tua vontade. Amém."</p>`,
+                intentions: [
+                    "Maria, ensina-me a dizer “sim” aos planos de Deus com confiança total.", "Jesus, abre meu coração para acolher com alegria aquilo que Deus envia.", "Jesus, nasce novamente na minha vida e conduz meus passos pela Tua providência.", "Maria, apresenta minha vida a Deus e molda meu coração segundo a vontade d’Ele.", "Jesus, quando eu me sentir perdido, inquieto ou sem direção, conduz meu coração de volta ao Teu caminho. Concede-me clareza, ordem e providência em todas as áreas da minha vida.", // Gozosos
+                    "Jesus, renova em mim a graça do Batismo e abre meu coração ao Teu agir diário.", "Maria, ensina-me a obedecer prontamente para que a providência de Deus se manifeste.", "Jesus, abre meus olhos para reconhecer Teus sinais mesmo nas pequenas coisas.", "Jesus, transfigura minha vida e ilumina meus passos com a Tua vontade perfeita.", "Jesus Eucarístico, sustenta minha vida com a Tua providência diária.", // Luminosos
+                    "Jesus, ensina-me a confiar mesmo quando não compreendo os Teus caminhos.", "Jesus, nas dores da vida, fortalece minha fé na Tua providência fiel.", "Jesus, quando o orgulho me ferir, torna meu coração humilde e aberto ao Teu plano.", "Jesus, ajuda-me a carregar minhas cruzes confiando na Tua condução amorosa.", "Jesus, ensina-me a entregar tudo nas mãos do Pai, como Tu fizeste.", // Dolorosos
+                    "Jesus, ressuscita minha esperança e faz florescer Tua providência em minha vida.", "Jesus, eleva meu coração às coisas do Alto e alinha-me ao Teu querer.", "Espírito Santo, abre meus olhos para reconhecer a providência de Deus em tudo.", "Maria, leva minhas necessidades ao coração de Deus e ajuda-me a confiar mais.", "Maria, Rainha do Céu, reina sobre minha vida e abre meus caminhos à providência divina." // Gloriosos
+                ]
+            },
+            'ansiedade': {
+                title: "Libertação da Ansiedade",
+                intro: `<p class="mb-3 italic">"Maria Santíssima, Mãe da Paz, ofereço este Santo Rosário pedindo que Jesus liberte meu coração de toda ansiedade."</p><p class="mb-3 italic">"Senhor Jesus, acalma meus pensamentos, silencia meus medos e infunde em mim a confiança que só vem de Ti."</p><p class="mb-3 italic">"Que o Espírito Santo pacifique minha mente e dissipe toda inquietação."</p><p class="mb-3 italic">"Mãe Maria, cobre-me com teu manto e conduz minha alma ao descanso seguro no Coração de Jesus."</p><p class="mb-3 italic">"Eu entrego minhas preocupações e recebo a paz que vem do Céu."</p><p class="font-bold text-[#C5A059]">"Jesus e Maria, eu confio. Amém."</p>`,
+                intentions: [
+                    "Jesus, acalma meus medos como acalmaste o coração de Maria.", "Espírito Santo, preenche minha alma e afasta toda ansiedade.", "Menino Jesus, nasce também dentro do meu coração e traz Tua paz.", "Jesus, apresento a Ti minhas preocupações; recebe-as e pacifica-me.", "Jesus, encontra-me quando me sinto perdida na ansiedade.", // Gozosos
+                    "Pai amado, lembra-me que sou Tua filha e acalma minha alma.", "Maria, guia meus passos para que eu confie totalmente em Jesus.", "Jesus, que a certeza do Teu Reino dissipe minha ansiedade.", "Senhor, toca meu coração e remove meus temores.", "Jesus Eucarístico, entrega-me a Tua paz interior.", // Luminosos
+                    "Jesus, que venceu a angústia, fortalece-me nas minhas.", "Senhor, cura minhas dores emocionais e acalma minha mente.", "Jesus, liberta meus pensamentos da aflição e da inquietação.", "Senhor, ajuda-me a carregar minhas preocupações com coragem.", "Jesus, ensina-me a entregar a ansiedade em Tuas mãos.", // Dolorosos
+                    "Jesus ressuscitado, vence toda inquietação em mim.", "Senhor, eleva meus pensamentos acima das preocupações.", "Espírito Santo, infunde paz profunda na minha alma.", "Maria, envolve-me com tua luz e afasta a ansiedade.", "Rainha Maria, reina sobre meu coração e concede-me serenidade." // Gloriosos
+                ]
+            },
+            'libertacao': {
+                title: "Cura e Libertação",
+                intro: `<p class="mb-3 italic">"Senhor Jesus, ofereço este Santo Rosário pedindo cura para meu corpo, minha mente e meu coração."</p><p class="mb-3 italic">"Liberta-me de toda amarra espiritual, de tudo o que não vem de Ti e de tudo o que me aprisiona."</p><p class="mb-3 italic">"Maria Santíssima, Mãe que desfaz os nós, intercede por mim e cobre-me com teu manto de proteção."</p><p class="mb-3 italic">"Espírito Santo, vem com Teu fogo consumir toda dor, enfermidade e opressão."</p><p class="font-bold text-[#C5A059]">"Jesus, Tu és o Médico das almas: cura-me, restaura-me e liberta-me completamente. Amém."</p>`,
+                intentions: [
+                    "Jesus, cura o que parece impossível na minha vida.", "Maria, visita-me e traz cura e libertação ao meu coração.", "Jesus, nasce em mim e cura toda ferida da alma.", "Senhor, apresenta-me ao Pai e liberta-me de toda opressão.", "Jesus, liberta-me de tudo que me afasta de Ti e devolve-me a paz.", // Gozosos
+                    "Espírito Santo, desce sobre mim e cura tudo o que está ferido.", "Jesus, transforma minha vida e liberta-me de todo mal oculto.", "Senhor, liberta-me de tudo que me prende ao pecado.", "Jesus, ilumina minhas trevas e cura toda dor interior.", "Jesus Eucarístico, cura-me com Teu corpo e liberta-me pelo Teu sangue.", // Luminosos
+                    "Jesus, cura minhas angústias mais profundas.", "Senhor, cura minhas feridas físicas, emocionais e espirituais.", "Jesus, liberta minha mente de tormentos e pensamentos destrutivos.", "Jesus, cura o peso que carrego e liberta-me da opressão.", "Senhor, consuma em mim toda cura e libertação que eu preciso.", // Dolorosos
+                    "Jesus vivo, ressuscita tudo o que está ferido em mim.", "Senhor, eleva minha vida e liberta-me de toda prisão espiritual.", "Espírito Santo, queima todo mal e traz cura profunda.", "Mãe Maria, ilumina-me e liberta-me das trevas espirituais.", "Rainha Maria, reina sobre minha vida e traz cura e libertação total." // Gloriosos
+                ]
+            },
+            'dominio': {
+                title: "Domínio da Arma Espiritual",
+                intro: `<p class="mb-3 italic">"Senhor Jesus, consagro este Rosário como arma espiritual em Tuas mãos."</p><p class="mb-3 italic">"Dá-me força, lucidez e autoridade contra toda ação do mal."</p><p class="mb-3 italic">"Maria Santíssima, Mãe e Rainha das batalhas, envolve-me com teu manto e ensina-me a usar esta arma com obediência, fé e coragem."</p><p class="mb-3 italic">"Espírito Santo, acende em mim o fogo que vence as trevas e ilumina minhas decisões."</p><p class="font-bold text-[#C5A059]">"Que cada mistério seja para mim luz, força e domínio espiritual. Amém."</p>`,
+                intentions: [
+                    "Maria, ensina-me obediência para dominar a arma espiritual.", "Jesus, fortalece minha fé para usar o Rosário com autoridade.", "Senhor, nasce em mim a força espiritual que vence o mal.", "Jesus, ilumina minha vida para usar o Rosário com precisão espiritual.", "Jesus, capacita-me para a batalha espiritual diária.", // Gozosos
+                    "Espírito Santo, unge-me para lutar com força espiritual verdadeira.", "Maria, guia-me no caminho da obediência que destrói o mal.", "Jesus, dá-me autoridade para avançar contra as trevas.", "Senhor, transfigura minha alma para lutar com clareza e poder.", "Jesus Eucarístico, fortalece-me como guerreiro da Tua luz.", // Luminosos
+                    "Jesus, dá-me resistência espiritual diante do combate.", "Senhor, fortalece-me contra os ataques do inimigo.", "Jesus, liberta minha mente de toda influência maligna.", "Jesus, dá-me firmeza para não abandonar a batalha espiritual.", "Senhor, sela minha vitória pela Tua cruz.", // Dolorosos
+                    "Jesus vivo, dá-me autoridade sobre todo mal.", "Senhor, eleva meu espírito para combater sem medo.", "Espírito Santo, arma-me com Teu fogo.", "Maria, veste-me com Tua proteção para a batalha.", "Rainha Maria, concede-me domínio sobre a arma espiritual do Rosário." // Gloriosos
+                ]
+            }
         };
 
-        const prayerOutro = {
-            title: "AGRADECIMENTO E SALVE RAINHA",
-            body: `<div class="text-sm">
-                <p class="mb-2 italic">"Infinitas Graças vos damos, soberana Rainha, pelos benefícios que todos os dias recebemos de vossas mãos liberais. Dignai-vos, agora e para sempre, tomarmos debaixo do vosso poderoso amparo. E para mais vos obrigar, vos saudamos com uma Salve Rainha:"</p>
-                <p class="mb-2 italic">"Salve Rainha, Mãe de misericórdia, vida, doçura e esperança nossa, salve! A vós bradamos os degredados filhos de Eva. A vós suspiramos, gemendo e chorando neste vale de lágrimas. Eia, pois, advogada nossa, esses vossos olhos misericordiosos a nós volvei, e depois deste desterro mostrai-nos Jesus, bendito fruto do vosso ventre, ó clemente, ó piedosa, ó doce sempre Virgem Maria. Rogai por nós, Santa Mãe de Deus, para que sejamos dignos das promessas de Cristo. Amém!"</p>
-                <p class="font-bold mt-2 text-center text-[#C5A059]">Em nome do Pai, do Filho e do Espírito Santo. Amém!</p>
-            </div>`
-        };
 
         // State
         let currentIntention = 'casamento'; 
@@ -606,9 +664,13 @@
 
         window.startPrayer = function(intention) { 
             currentIntention = intention;
+            const themeData = rosaryThemes[intention] || rosaryThemes['casamento'];
+            
             window.navigateTo('prayer'); 
-            document.getElementById('prayer-top-title').innerText = "Restauração Conjugal";
+            document.getElementById('prayer-top-title').innerText = themeData.title;
+            
             resetButtonState();
+
             currentStep=0; 
             updateTextUI(); 
             setTimeout(()=>{ window.init3D(); highlightBead(0);}, 300); 
@@ -656,25 +718,14 @@
         
         function highlightBead(idx) {
             if(!beads.length) return;
-            beads.forEach(b => { 
+            beads.forEach((b, i) => { 
                 if(b.material) {
                     b.material.emissive.setHex(0x000000); 
-                    // Only reset color if it was changed. We need original material info.
-                    // Re-derive original type
-                    // We can assume dark for Pater, light for Ave based on index logic
-                    // However, easier is to re-apply logic
-                    // Let's find index in beads array
-                }
-            });
-            
-            // Re-apply base colors to all beads (inefficient but safe)
-            beads.forEach((b, i) => {
-                 if(b.material) {
                     const isLoopPater = (i >= 6 && (i-6)%11 === 0);
                     const isTailPater = (i === 1 || i === 5);
                     const isPater = (isTailPater || isLoopPater);
                     b.material.color.setHex(isPater ? 0x5D4037 : 0xC19A6B);
-                 }
+                }
             });
             
             let beadIndex = -1;
@@ -716,20 +767,23 @@
             const jesusImg = "https://i.postimg.cc/VvH0SLN2/formacao-eterna-e-a-misericordia-divina-por-nos.jpg";
             const maryImg = "https://i.postimg.cc/Nf2Pvf05/3460335d72f92902a928fc13a363c05c.jpg";
             let currentImg = maryImg;
+            
+            // Fetch Theme Data
+            const theme = rosaryThemes[currentIntention] || rosaryThemes['casamento'];
 
             if (currentStep === 0) {
                 titleText = "OFERECIMENTO E CREDO";
-                bodyText = `<div class="text-sm mb-4 p-2 border-b border-[#5c3a21]/50"><h4 class="text-[#C5A059] font-bold text-xs uppercase mb-2">Oração de Oferecimento</h4><p class="mb-2 italic opacity-90">"Maria Santíssima, Mãe de Jesus, ofereço este Santo Rosário pela restauração do meu matrimônio. Senhor Jesus, entra no nosso lar, cura nossas feridas, quebra todo orgulho, silêncio, frieza e divisão."</p><p class="mb-2 italic opacity-90">"Que todo espírito de confusão e ataque espiritual seja afastado pelo Teu poder. Maria, Rainha da Paz, envolve nossa família no Teu manto, conduz nossos corações ao perdão, à fidelidade e ao amor que vem de Deus."</p><p class="font-bold text-[#C5A059]">"Jesus e Maria, salvai e protegei nossa família. Amém."</p></div><div class="bg-[#2a1a15] p-3 rounded border border-[#5c3a21]"><h4 class="text-[#C5A059] font-bold text-xs uppercase mb-1">Credo</h4><p class="text-sm italic leading-relaxed">${prayerTexts.credo}</p></div>`;
+                bodyText = `<div class="text-sm mb-4 p-2 border-b border-[#5c3a21]/50"><h4 class="text-[#C5A059] font-bold text-xs uppercase mb-2">Oração de Oferecimento</h4>${theme.intro}</div><div class="bg-[#2a1a15] p-3 rounded border border-[#5c3a21]"><h4 class="text-[#C5A059] font-bold text-xs uppercase mb-1">Credo</h4><p class="text-lg italic leading-relaxed">${prayerTexts.credo}</p></div>`;
             } else if (currentStep === 1) {
                 currentImg = jesusImg;
                 titleText = "INÍCIO";
-                bodyText = `<div class="bg-[#2a1a15] p-3 rounded border border-[#5c3a21]"><h4 class="text-[#C5A059] font-bold text-xs uppercase mb-1">Pai Nosso</h4><p class="text-sm italic leading-relaxed">${prayerTexts.paiNosso}</p></div>`;
+                bodyText = `<div class="bg-[#2a1a15] p-3 rounded border border-[#5c3a21]"><h4 class="text-[#C5A059] font-bold text-xs uppercase mb-1">Pai Nosso</h4><p class="text-lg italic leading-relaxed">${prayerTexts.paiNosso}</p></div>`;
             } else if (currentStep >= 2 && currentStep <= 4) {
                 titleText = "AVE MARIA";
-                bodyText = `<div class="bg-[#2a1a15] p-3 rounded border border-[#5c3a21]"><h4 class="text-[#C5A059] font-bold text-xs uppercase mb-1">Ave Maria (${currentStep-1}/3)</h4><p class="text-sm italic leading-relaxed">${prayerTexts.aveMaria}</p></div>`;
+                bodyText = `<div class="bg-[#2a1a15] p-3 rounded border border-[#5c3a21]"><h4 class="text-[#C5A059] font-bold text-xs uppercase mb-1">Ave Maria (${currentStep-1}/3)</h4><p class="text-lg italic leading-relaxed">${prayerTexts.aveMaria}</p></div>`;
             } else if (currentStep === 5) {
                 titleText = "GLÓRIA";
-                bodyText = `<div class="bg-[#2a1a15] p-3 rounded border border-[#5c3a21]"><h4 class="text-[#C5A059] font-bold text-xs uppercase mb-1">Glória</h4><p class="text-sm italic leading-relaxed">${prayerTexts.gloria}</p></div>`;
+                bodyText = `<div class="bg-[#2a1a15] p-3 rounded border border-[#5c3a21]"><h4 class="text-[#C5A059] font-bold text-xs uppercase mb-1">Glória</h4><p class="text-lg italic leading-relaxed">${prayerTexts.gloria}</p></div>`;
             } else if (currentStep >= 6) {
                 const adjustedStep = currentStep - 6; 
                 const setIndex = Math.floor(adjustedStep / 60); 
@@ -738,25 +792,28 @@
                 if (!currentSetKey) {
                     isEnd = true;
                     titleText = "SALVE RAINHA";
-                    bodyText = `<div class="text-sm mb-4"><p class="mb-2 italic">"Infinitas Graças vos damos, soberana Rainha, pelos benefícios que todos os dias recebemos de vossas mãos liberais. Dignai-vos, agora e para sempre, tomarmos debaixo do vosso poderoso amparo. E para mais vos obrigar, vos saudamos com uma Salve Rainha:"</p></div><div class="bg-[#2a1a15] p-3 rounded border border-[#5c3a21]"><h4 class="text-[#C5A059] font-bold text-xs uppercase mb-1">Salve Rainha</h4><p class="text-sm italic leading-relaxed">Salve Rainha, Mãe de misericórdia, vida, doçura e esperança nossa, salve! A vós bradamos os degredados filhos de Eva. A vós suspiramos, gemendo e chorando neste vale de lágrimas. Eia, pois, advogada nossa, esses vossos olhos misericordiosos a nós volvei, e depois deste desterro mostrai-nos Jesus, bendito fruto do vosso ventre, ó clemente, ó piedosa, ó doce sempre Virgem Maria. Rogai por nós, Santa Mãe de Deus, para que sejamos dignos das promessas de Cristo. Amém.</p></div><p class="font-bold mt-4 text-center text-[#C5A059]">Em nome do Pai, do Filho e do Espírito Santo. Amém!</p>`;
+                    bodyText = `<div class="text-sm mb-4"><p class="mb-2 italic">"Infinitas Graças vos damos, soberana Rainha, pelos benefícios que todos os dias recebemos de vossas mãos liberais. Dignai-vos, agora e para sempre, tomarmos debaixo do vosso poderoso amparo. E para mais vos obrigar, vos saudamos com uma Salve Rainha:"</p></div><div class="bg-[#2a1a15] p-3 rounded border border-[#5c3a21]"><h4 class="text-[#C5A059] font-bold text-xs uppercase mb-1">Salve Rainha</h4><p class="text-lg italic leading-relaxed">Salve Rainha, Mãe de misericórdia, vida, doçura e esperança nossa, salve! A vós bradamos os degredados filhos de Eva. A vós suspiramos, gemendo e chorando neste vale de lágrimas. Eia, pois, advogada nossa, esses vossos olhos misericordiosos a nós volvei, e depois deste desterro mostrai-nos Jesus, bendito fruto do vosso ventre, ó clemente, ó piedosa, ó doce sempre Virgem Maria. Rogai por nós, Santa Mãe de Deus, para que sejamos dignos das promessas de Cristo. Amém.</p></div><p class="font-bold mt-4 text-center text-[#C5A059]">Em nome do Pai, do Filho e do Espírito Santo. Amém!</p>`;
                 } else {
-                    const currentMysteries = mysteriesData[currentSetKey];
+                    const currentMysteries = baseMysteries[currentSetKey];
                     const currentSetName = setDisplayNames[currentSetKey];
                     const stepInSet = adjustedStep % 60;
                     const decadeIndex = Math.floor(stepInSet / 12);
                     const innerStep = stepInSet % 12;
                     const mystery = currentMysteries[decadeIndex];
+                    
+                    const globalDecadeIndex = (setIndex * 5) + decadeIndex;
+                    const intentionText = theme.intentions[globalDecadeIndex] || "Pela graça de Deus.";
 
                     if (innerStep === 0) {
                         currentImg = jesusImg;
                         titleText = `<div class='flex flex-col gap-1'><span class='text-[10px] text-gray-400 tracking-widest'>${currentSetName}</span><span>${mystery.title}</span></div>`;
-                        bodyText = `<p class="mb-2 text-xs italic text-[#C5A059]">"${mystery.verse}"</p><div class="mb-4 bg-[#3d221a] p-2 rounded border border-[#8a6e2f]/50 text-xs"><strong>🙏 Intenção:</strong><br>${mystery.intention}</div><div class="bg-[#2a1a15] p-3 rounded border border-[#5c3a21]"><h4 class="text-[#C5A059] font-bold text-xs uppercase mb-1">Pai Nosso</h4><p class="text-sm italic leading-relaxed">${prayerTexts.paiNosso}</p></div>`;
+                        bodyText = `<p class="mb-2 text-xs italic text-[#C5A059]">"${mystery.verse}"</p><div class="mb-4 bg-[#3d221a] p-2 rounded border border-[#8a6e2f]/50 text-xs"><strong>🙏 Intenção:</strong><br>${intentionText}</div><div class="bg-[#2a1a15] p-3 rounded border border-[#5c3a21]"><h4 class="text-[#C5A059] font-bold text-xs uppercase mb-1">Pai Nosso</h4><p class="text-lg italic leading-relaxed">${prayerTexts.paiNosso}</p></div>`;
                     } else if (innerStep >= 1 && innerStep <= 10) {
                         titleText = `<div class='flex flex-col gap-1'><span class='text-[10px] text-gray-400 tracking-widest'>${currentSetName}</span><span>${mystery.title}</span></div>`;
-                        bodyText = `<div class="bg-[#2a1a15] p-3 rounded border border-[#5c3a21]"><h4 class="text-[#C5A059] font-bold text-xs uppercase mb-1">Ave Maria (${innerStep}/10)</h4><p class="text-sm italic leading-relaxed">${prayerTexts.aveMaria}</p></div>`;
+                        bodyText = `<div class="bg-[#2a1a15] p-3 rounded border border-[#5c3a21]"><h4 class="text-[#C5A059] font-bold text-xs uppercase mb-1">Ave Maria (${innerStep}/10)</h4><p class="text-lg italic leading-relaxed">${prayerTexts.aveMaria}</p></div>`;
                     } else if (innerStep === 11) {
                         titleText = "GLÓRIA E JACULATÓRIAS";
-                        bodyText = `<div class="p-3 bg-[#700F14]/20 border-t border-[#700F14] rounded space-y-3"><div><h5 class="text-[#C5A059] text-[10px] font-bold uppercase mb-1">Glória</h5><p class="text-sm italic text-gray-300 leading-relaxed">"${prayerTexts.gloria}"</p></div><div><h5 class="text-[#C5A059] text-[10px] font-bold uppercase mb-1">Jaculatórias</h5><p class="text-sm italic text-gray-300 leading-relaxed mb-2">"${prayerTexts.jaculatoriaJesus}"</p><p class="text-sm italic text-gray-300 leading-relaxed">"${prayerTexts.jaculatoriaMaria}"</p></div></div>`;
+                        bodyText = `<div class="p-3 bg-[#700F14]/20 border-t border-[#700F14] rounded space-y-3"><div><h5 class="text-[#C5A059] text-[10px] font-bold uppercase mb-1">Glória</h5><p class="text-lg italic text-gray-300 leading-relaxed">"${prayerTexts.gloria}"</p></div><div><h5 class="text-[#C5A059] text-[10px] font-bold uppercase mb-1">Jaculatórias</h5><p class="text-lg italic text-gray-300 leading-relaxed mb-2">"${prayerTexts.jaculatoriaJesus}"</p><p class="text-lg italic text-gray-300 leading-relaxed">"${prayerTexts.jaculatoriaMaria}"</p></div></div>`;
                     }
                 }
             }
