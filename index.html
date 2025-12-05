@@ -162,6 +162,25 @@
         .safe-area-pb {
             padding-bottom: max(20px, env(safe-area-inset-bottom));
         }
+
+        /* Form Inputs */
+        .input-field {
+            width: 100%;
+            background-color: #2a1a15;
+            border: 1px solid #5c3a21;
+            color: #f4f0ec;
+            padding-left: 3rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            border-radius: 0.25rem;
+            font-family: 'Cormorant Garamond', serif;
+            transition: border-color 0.3s;
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: #C5A059;
+        }
     </style>
 </head>
 <body class="flex justify-center items-start h-full w-full overflow-hidden bg-[#1a0e0a]">
@@ -169,8 +188,8 @@
     <!-- App Container -->
     <div id="app" class="w-full max-w-7xl h-full h-[100dvh] relative shadow-2xl overflow-hidden bg-[#22120d] border-x border-[#3d271e] flex flex-col mx-auto">
         
-        <!-- Header -->
-        <header id="main-header" class="shrink-0 pt-6 pb-4 px-6 text-center z-20 relative transition-all duration-300 bg-gradient-to-b from-black/80 to-transparent">
+        <!-- Header (HIDDEN ON LOGIN/REGISTER) -->
+        <header id="main-header" class="hidden shrink-0 pt-6 pb-4 px-6 text-center z-20 relative transition-all duration-300 bg-gradient-to-b from-black/80 to-transparent">
             <div class="text-[10px] tracking-[0.3em] text-[#C5A059] uppercase mb-1 drop-shadow-md font-bold">Pax Et Bonum</div>
             <h1 class="text-3xl font-bold text-[#f5e6c4] drop-shadow-lg font-cinzel tracking-wide">Santo Rosário</h1>
             <p class="text-2xl text-[#a89078] font-bold mt-0 drop-shadow-md font-cinzel tracking-wider">Batalha Espiritual</p>
@@ -179,8 +198,76 @@
         <!-- CONTENT AREA -->
         <div id="content-area" class="flex-grow relative w-full flex flex-col overflow-hidden">
             
+            <!-- VIEW: Login -->
+            <main id="view-login" class="absolute inset-0 flex flex-col items-center justify-center p-6 screen-transition w-full z-50 bg-[#1a0e0a]">
+                <div class="w-full max-w-sm flex flex-col items-center">
+                    <div class="text-[12px] tracking-[0.4em] text-[#C5A059] uppercase mb-2 font-bold opacity-80">Pax Et Bonum</div>
+                    <h1 class="text-5xl font-bold text-[#f5e6c4] drop-shadow-lg font-cinzel tracking-wide mb-2 text-center">Santo<br>Rosário</h1>
+                    <p class="text-xl text-[#a89078] font-bold mb-10 drop-shadow-md font-cinzel tracking-wider">Batalha Espiritual</p>
+
+                    <div class="w-full space-y-4">
+                        <div class="relative">
+                            <i class="fa-solid fa-envelope absolute left-4 top-1/2 transform -translate-y-1/2 text-[#C5A059]/50"></i>
+                            <input type="email" id="login-email" placeholder="Seu E-mail" class="input-field" placeholder-gray-500">
+                        </div>
+                        
+                        <div class="relative">
+                            <i class="fa-solid fa-lock absolute left-4 top-1/2 transform -translate-y-1/2 text-[#C5A059]/50"></i>
+                            <input type="password" id="login-password" placeholder="Sua Senha" class="input-field" placeholder-gray-500">
+                        </div>
+
+                        <button onclick="window.doLogin()" class="w-full py-4 bg-gradient-to-r from-[#700F14] to-[#500a0e] text-[#F4F0EC] font-cinzel font-bold text-lg border border-[#8a6e2f] rounded shadow-lg hover:scale-[1.02] active:scale-95 transition-all mt-6">
+                            ENTRAR
+                        </button>
+                        
+                        <div class="flex justify-between items-center mt-4 text-xs w-full px-1">
+                            <span onclick="window.navigateTo('register')" class="text-[#C5A059] font-bold cursor-pointer hover:underline">Criar nova conta</span>
+                            <span class="text-[#a89078] cursor-pointer hover:text-[#C5A059]">Esqueci a senha</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute bottom-6 text-[10px] text-gray-600 uppercase tracking-widest">Versão 2.1</div>
+            </main>
+
+            <!-- VIEW: Register (CADASTRO) -->
+            <main id="view-register" class="hidden absolute inset-0 flex flex-col items-center justify-center p-6 screen-transition w-full z-50 bg-[#1a0e0a]">
+                <div class="w-full max-w-sm flex flex-col items-center">
+                    <h2 class="text-3xl font-bold text-[#C5A059] drop-shadow-lg font-cinzel mb-6 text-center">Criar Conta</h2>
+                    
+                    <div class="w-full space-y-4">
+                         <div class="relative">
+                            <i class="fa-solid fa-user absolute left-4 top-1/2 transform -translate-y-1/2 text-[#C5A059]/50"></i>
+                            <input type="text" id="reg-name" placeholder="Seu Nome" class="input-field">
+                        </div>
+
+                        <div class="relative">
+                            <i class="fa-solid fa-envelope absolute left-4 top-1/2 transform -translate-y-1/2 text-[#C5A059]/50"></i>
+                            <input type="email" id="reg-email" placeholder="Seu E-mail" class="input-field">
+                        </div>
+                        
+                        <div class="relative">
+                            <i class="fa-solid fa-lock absolute left-4 top-1/2 transform -translate-y-1/2 text-[#C5A059]/50"></i>
+                            <input type="password" id="reg-password" placeholder="Senha" class="input-field">
+                        </div>
+                        
+                        <div class="relative">
+                            <i class="fa-solid fa-lock absolute left-4 top-1/2 transform -translate-y-1/2 text-[#C5A059]/50"></i>
+                            <input type="password" id="reg-confirm-password" placeholder="Confirmar Senha" class="input-field">
+                        </div>
+
+                        <button onclick="window.performRegistration()" class="w-full py-4 bg-gradient-to-r from-[#C5A059] to-[#8a6e2f] text-[#1a0e0a] font-cinzel font-bold text-lg border border-[#f4f0ec]/20 rounded shadow-lg hover:scale-[1.02] active:scale-95 transition-all mt-6">
+                            CADASTRAR
+                        </button>
+                        
+                        <p class="text-center text-xs text-[#a89078] mt-4">
+                            Já tem uma conta? <span onclick="window.navigateTo('login')" class="text-[#C5A059] font-bold cursor-pointer hover:underline">Fazer Login</span>
+                        </p>
+                    </div>
+                </div>
+            </main>
+
             <!-- VIEW: Grand Hall -->
-            <main id="view-grand-hall" class="absolute inset-0 p-4 flex flex-col gap-6 scroll-container screen-transition max-w-md mx-auto w-full">
+            <main id="view-grand-hall" class="hidden absolute inset-0 p-4 flex flex-col gap-6 scroll-container screen-transition max-w-md mx-auto w-full">
                 <div class="pb-40 w-full flex flex-col gap-4 mt-4">
                     <div class="grid grid-cols-2 gap-4 shrink-0">
                         <div onclick="window.navigateTo('instruction-room')" class="menu-card h-32 flex flex-col items-center justify-center text-center p-3 group" style="background: rgba(20, 10, 10, 0.75); backdrop-filter: blur(8px); border: 1px solid rgba(197, 160, 89, 0.4); border-radius: 8px; cursor: pointer;">
@@ -226,7 +313,7 @@
                         </div>
                     </div>
                     
-                    <!-- CARROUSEL PADRE PIO (ATUALIZADO) -->
+                    <!-- CARROUSEL PADRE PIO -->
                     <div class="mt-8 pb-10 w-full max-w-md mx-auto text-center opacity-90">
                         <div id="quote-container" class="transition-opacity duration-1000 ease-in-out h-28 flex flex-col justify-center items-center px-4">
                             <p id="quote-text" class="text-sm text-[#C5A059] italic mb-2 leading-relaxed font-serif">"Amai a Nossa Senhora e rezem o terço, porque o seu terço é a arma contra todos os males do mundo de hoje."</p>
@@ -237,7 +324,7 @@
                 </div>
             </main>
 
-            <!-- VIEW: INSTRUCTION ROOM (ATUALIZADO) -->
+            <!-- VIEW: INSTRUCTION ROOM -->
             <main id="view-instruction-room" class="hidden absolute inset-0 bg-[#1a0f0c] z-40 flex flex-col items-center justify-center text-center p-6 screen-transition w-full">
                 <div class="absolute top-0 left-0 w-full p-4 z-20 flex justify-between items-center">
                     <button onclick="window.navigateTo('grand-hall')" class="text-[#C5A059] text-xl drop-shadow-md"><i class="fa-solid fa-arrow-left"></i> Voltar</button>
@@ -259,7 +346,7 @@
                 </div>
             </main>
 
-            <!-- VIEW: LIBRARY ROOM (NOVA TELA) -->
+            <!-- VIEW: LIBRARY ROOM -->
             <main id="view-library-room" class="hidden absolute inset-0 bg-[#1a0f0c] z-40 flex flex-col items-center justify-center text-center p-6 screen-transition w-full">
                 <div class="absolute top-0 left-0 w-full p-4 z-20 flex justify-between items-center">
                     <button onclick="window.navigateTo('grand-hall')" class="text-[#C5A059] text-xl drop-shadow-md"><i class="fa-solid fa-arrow-left"></i> Voltar</button>
@@ -343,7 +430,7 @@
                 </div>
             </main>
 
-            <!-- VIEW: Prayer Interface (FIXED MOBILE LAYOUT - Button Moved) -->
+            <!-- VIEW: Prayer Interface -->
             <main id="view-prayer" class="hidden fixed inset-0 z-50 flex flex-col bg-[#1a0f0c]">
                 
                 <!-- Top Bar -->
@@ -400,6 +487,63 @@
 
     <!-- Logic -->
     <script>
+        // LOGIN LOGIC
+        window.doLogin = function() {
+            // Simulate Login
+            const email = document.getElementById('login-email').value;
+            const pass = document.getElementById('login-password').value;
+            
+            if(!email || !pass) {
+                alert("Por favor, preencha e-mail e senha.");
+                return;
+            }
+
+            // Check against simulated DB
+            const storedUser = localStorage.getItem('user_db');
+            if(storedUser) {
+                const user = JSON.parse(storedUser);
+                if(email === user.email && pass === user.password) {
+                     // Success
+                     proceedToApp();
+                } else {
+                    alert("E-mail ou senha incorretos (ou usuário não cadastrado).");
+                }
+            } else {
+                // Fallback for dev mode or first usage without reg
+                proceedToApp();
+            }
+        };
+
+        function proceedToApp() {
+            const header = document.getElementById('main-header');
+            if(header) header.classList.remove('hidden');
+            document.getElementById('view-login').classList.add('hidden');
+            document.getElementById('view-grand-hall').classList.remove('hidden');
+            if(typeof startQuoteCarousel === 'function') startQuoteCarousel();
+            if(typeof window.init3D === 'function') window.init3D();
+        }
+
+        window.performRegistration = function() {
+            const name = document.getElementById('reg-name').value;
+            const email = document.getElementById('reg-email').value;
+            const pass = document.getElementById('reg-password').value;
+            const confirm = document.getElementById('reg-confirm-password').value;
+
+            if(!name || !email || !pass) {
+                alert("Preencha todos os campos."); return;
+            }
+            if(pass !== confirm) {
+                alert("As senhas não conferem."); return;
+            }
+
+            // Save to LocalStorage (Simulated DB)
+            const user = { name, email, password: pass };
+            localStorage.setItem('user_db', JSON.stringify(user));
+            
+            alert("Conta criada com sucesso! Faça login.");
+            window.navigateTo('login');
+        };
+
         const instructionData = []; 
 
         let currentInstructionList = [];
@@ -438,13 +582,21 @@
         }
 
         window.navigateTo = function(screenId) {
-            const views = ['view-grand-hall', 'view-battle-selection', 'view-instruction-room', 'view-instruction-detail', 'view-prayer', 'view-library-room'];
+            const views = ['view-grand-hall', 'view-battle-selection', 'view-instruction-room', 'view-instruction-detail', 'view-prayer', 'view-library-room', 'view-login', 'view-register'];
             views.forEach(id => {
                 const el = document.getElementById(id);
-                if(el) el.classList.add('hidden');
+                if(el && id !== 'view-login') el.classList.add('hidden'); 
             });
             
+            const loginView = document.getElementById('view-login');
+            const regView = document.getElementById('view-register');
+            
+            // Logic to hide auth screens
+            if (screenId !== 'login') { if(loginView) loginView.classList.add('hidden'); }
+            if (screenId !== 'register') { if(regView) regView.classList.add('hidden'); }
+
             const header = document.getElementById('main-header');
+            // Show header only in main app screens
             if (screenId === 'grand-hall' || screenId === 'battle-selection') {
                 if(header) header.classList.remove('hidden');
             } else {
@@ -576,6 +728,8 @@
             }
         };
 
+
+        // State
         let currentIntention = 'casamento'; 
         let currentStep = 0;
         let scene, camera, renderer, rosaryGroup, beads = [], isDragging = false, previousMousePosition = { x: 0, y: 0 };
@@ -810,6 +964,7 @@
             const maryImg = "https://i.postimg.cc/Nf2Pvf05/3460335d72f92902a928fc13a363c05c.jpg";
             let currentImg = maryImg;
             
+            // Fetch Theme Data
             const theme = rosaryThemes[currentIntention] || rosaryThemes['casamento'];
 
             if (currentStep === 0) {
@@ -882,12 +1037,6 @@
                 document.getElementById('counter-display').innerText = `${currentStep}`;
             }
         }
-
-        // Inicializar Carrossel
-        startQuoteCarousel();
-        
-        // Inicializar 3D ao carregar a página (para o Grand Hall, embora oculto, prepara o contexto)
-        // window.addEventListener('load', window.init3D); 
     </script>
 </body>
 </html>
